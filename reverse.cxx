@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
   std::ifstream in(inputfile, std::ios::binary);
   std::vector<char> v( (std::istreambuf_iterator<char>(in)),
       std::istreambuf_iterator<char>() );
-  std::ofstream out(outputfile);
+  std::ofstream out(outputfile, std::ios::binary);
   std::copy(v.rbegin(), v.rend(), std::ostreambuf_iterator<char>(out));
   return 0;
 }
